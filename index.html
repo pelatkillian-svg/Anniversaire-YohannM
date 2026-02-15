@@ -9,29 +9,24 @@
       padding: 0;
       font-family: Arial, sans-serif;
       color: white;
+      min-height: 100vh;
     }
 
-    /* Conteneur flexible pour les deux images */
-    .background-container {
-      display: flex;
+    /* Image en arrière-plan */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      min-height: 100vh; /* minimum écran */
-    }
-
-    .left-bg, .right-bg {
-      flex: 1;
+      height: 100%;
+      background-image: url('killian_et_yoyo1.jpg'); /* ton image ici */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      position: fixed; /* reste fixe lors du scroll */
-      top: 0;
-      bottom: 0;
+      z-index: -2;
     }
 
-    .left-bg { left: 0; background-image: url('killian_et_yoyo1.jpg'); }
-    .right-bg { right: 0; background-image: url('killian_et_yoyo2.png'); }
-
-    /* Overlay sombre pour lisibilité du texte */
+    /* Overlay sombre pour lisibilité */
     .overlay {
       position: fixed;
       top: 0;
@@ -39,75 +34,102 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.5);
-      z-index: 1;
+      z-index: -1;
     }
 
-    /* Contenu texte qui scroll */
+    /* Contenu texte */
     .content {
       position: relative;
-      z-index: 2;
-      padding: 60px 20px;
+      z-index: 1;
       max-width: 800px;
-      margin: auto;
+      margin: 60px auto;
+      padding: 20px;
       line-height: 1.8;
     }
 
-    h1, h2 { color: #d81b60; }
-    p { margin-bottom: 20px; }
+    h1, h2 {
+      color: #d81b60;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
 
     button {
       font-size: 18px;
       padding: 10px 20px;
       cursor: pointer;
-      margin-top: 20px;
+      display: block;
+      margin: 30px auto;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="background-container">
-    <div class="left-bg"></div>
-    <div class="right-bg"></div>
-    <div class="overlay"></div>
+  <div class="background"></div>
+  <div class="overlay"></div>
 
-    <div class="content">
-      <h1>Mon Yoyo ❤️❤️❤️</h1>
+  <div class="content">
+    <h1>Mon yoyo ❤️❤️❤️</h1>
 
-      <p>
-        C’est compliqué d’innover chaque année depuis plus de 10 ans maintenant…
-        Nous nous efforçons de faire preuve d’imagination et de nous dépasser pour rendre hommage à l’autre.
-        Mais cette année, j’ai voulu faire quelque chose d’un peu différent…
-        quelque chose qui m’a demandé un peu plus de temps que d’habitude,
-        parce que oui, j’ai dû coder pour te rendre hommage !
-      </p>
+    <p>
+      C’est compliqué d’innover chaque année depuis plus de 10 ans maintenant nous nous efforçons de faire preuve d’imagination et on se dépasse pour faire hommage à l’autre, mais cette année, j’ai voulu faire quelque chose d’un peu différent, quelque chose qui m’a demandé un peu plus de temps que d’habitude, parce que oui, j’ai dû coder pour te rendre hommage !
+    </p>
 
-      <p>
-        28 ans mon vieux 😂 Comme le temps passe vite…
-        Et plus les années s’écoulent, plus tu ressembles à l’homme que j’ai envie de devenir.
-        Avec le temps, tu es devenu celui vers qui je me tourne quand ça ne va pas,
-        celui dont la parole compte vraiment, celui que j’écoute parce que je sais qu’elle est juste, sincère et droite.
-        Ta parole est d’or — et ça devient rare aujourd’hui.
-        Ta gentillesse, ta bienveillance, ton honnêteté et ta force tranquille sont des qualités que j’ai toujours admirées chez toi ❤️✨
-      </p>
+    <p>
+      28 ans mon vieux 😂 comme le temps passent vite … et plus les années s’écoulent, plus tu ressembles à l’homme que j’ai envie de devenir. Avec les années, tu es devenu celui vers qui je me tourne quand ça ne va pas, celui dont la parole compte vraiment, celui que j’écoute parce que je sais qu’elle est juste, sincère et droite. Ta parole est d’or, et ça devient rare aujourd’hui. Ta gentillesse, ta bienveillance, ton honnêteté et ta force tranquille sont des choses que j’ai toujours admirés chez toi ❤️✨
+    </p>
 
-      <!-- Ici tu peux mettre tout le reste de ton texte... -->
+    <p>
+      On s’est rencontrés sur les bancs du lycée… enfin, techniquement sur les bancs, mais surtout à côté, parce que je séchais comme toujours 😂. Ce qui devait être une simple rencontre dans un groupe d’amis est devenu la plus belle amitié de ma vie, un homme avec qui je partage tout sans honte ni retenue. À ce moment-là, on ne pouvait pas savoir que plus de dix ans plus tard, on serait encore là, comme au premier jour, mais plus soudés que jamais ❤️
+    </p>
 
-      <h2>Joyeux 28 ans mon Yoyo 🎉🥳❤️</h2>
+    <p>
+      Mon premier souvenir marquant de nous, on en parle souvent, comme si c’était hier, un souvenir qu’on adore tous les temps symbole d’une époque où rien ne comptait à par passé du temps toi et moi à rigoler, à regarder des parodies de manga, comme aujourd’hui au finale 😂 😂. C’est dans mon jardin à Villepreux. Une bière à la main, une soirée à parler de tout et de rien, à refaire le monde. Je me souviens m’être dit que c’était la première fois que je rencontrais quelqu’un d’aussi aligné avec moi. C’était fluide, naturel, évident. À partir de ce moment-là, j’ai su que tu n’étais pas juste un pote. Tu étais mon homme-sœur. Le frère que je n’ai jamais eu ❤️
+    </p>
 
-      <p style="font-weight:bold; font-size:18px;">
-        Je t’aime mon frère. Pour longtemps. Pour toujours. ❤️❤️❤️
-      </p>
+    <p>
+      On a grandi. On a changé. On a évolué dans des directions parfois différentes. La vie nous a fait traverser des étapes, des hauts, des bas, des doutes, des remises en question. Mais il y a une chose qui n’a jamais changé et depuis plus de dix ans : notre amitié. Elle n’a jamais vacillé. Elle a tenu, encore et encore. Et ça, ce n’est pas donné à tout le monde ❤️🔥
+    </p>
 
-      <button onclick="document.getElementById('music').style.display='block'; this.style.display='none';">
-        ▶️ Écouter la musique
-      </button>
+    <p>
+      Aujourd’hui, dans cette période compliquée pour moi, où je cherche ma place, où je doute, où j’ai peur, où je me sens parfois perdu… tu es là, encore une fois, comme toujours. Tu m’écoutes, tu me conseilles sans m’imposer. Tu m’accompagnes sans me juger. Tu me rappelles qui je suis quand moi-même je l’oublie. Et ça, ça n’a pas de prix ❤️🙏
+    </p>
 
-      <iframe id="music" style="display:none;" width="0" height="0"
-        src="https://www.youtube.com/embed/TiVIFMbwxOc?autoplay=1&loop=1&playlist=TiVIFMbwxOc"
-        frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    <p>
+      Des gens, il y en a beaucoup sur terre, plusieurs milliards, un chiffre qui ferait presque mal à la tête. Mais des personnes comme toi… « il est trop nombreux, il est trop nombreux » 😂 😂 😂 ❤️ (oui, je la place, parce que nos parodies de Naruto resteront gravées à vie). Même à 28 ans, on restera ces deux gars capables de rire pour rien, de débattre pendant des heures et de sortir des phrases absurdes avec un sérieux total, parce q’il n’y qu’avec un frère que c’est possible. Et évidemment, je continuerai à rappeler au monde que la meilleure rouquine de cette planète, c’est toi 😏😂❤️
+    </p>
 
-    </div>
+    <p>
+      Le mot “meilleur ami” est un mot fort pour moi, un mot avec beaucoup de sens, à ne pas utiliser à la légere. Pour moi, il signifie loyauté, présence dans les bons comme dans les mauvais moment, amour sincère. Ce n’est pas juste une amitié. C’est de l’amour filial. C’est un lien qui dépasse les mots, qui dépasse le temps, qui dépasse les épreuves ❤️
+    </p>
+
+    <p>
+      Alors aujourd’hui, je te fais une promesse. Peu importe ce que la vie mettra sur notre route. Peu importe les difficultés, les distances, les changements. Tu resteras mon premier et mon seul meilleur ami. Parce que ce que nous avons est unique. Parce que c’est solide. Parce que c’est vrai ❤️🔥
+    </p>
+
+    <h2>Joyeux 28 ans mon yoyo 🎉🥳❤️</h2>
+
+    <p>
+      Continue d’être cet homme droit, fort, bienveillant et lumineux. Continue d’être cette personne rare que j’ai la chance d’avoir dans ma vie. Et merci d’être ma boussole quand je me sens perdu ❤️
+    </p>
+
+    <p style="font-weight:bold; font-size:18px;">
+      Je t’aime mon frère. Pour longtemps. Pour toujours. ❤️❤️❤️
+    </p>
+
+    <button onclick="document.getElementById('music').style.display='block'; this.style.display='none';">
+      ▶️ Écouter la musique
+    </button>
+
+    <iframe id="music" style="display:none;" width="0" height="0"
+      src="https://www.youtube.com/embed/TiVIFMbwxOc?autoplay=1&loop=1&playlist=TiVIFMbwxOc"
+      frameborder="0" allow="autoplay; encrypted-media">
+    </iframe>
+
   </div>
 
 </body>

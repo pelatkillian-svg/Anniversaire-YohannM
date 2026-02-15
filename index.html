@@ -8,92 +8,100 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      min-height: 100vh;
       color: white;
-      min-height: 100vh;
     }
 
-    /* Conteneur principal avec photos en arrière-plan */
-    .background {
-      position: relative;
-      min-height: 100vh;
-      padding: 60px;
-      background-image: url('killian_et_yoyo1.jpg'), url('killian_et_yoyo2.png');
-      background-size: cover, cover;
-      background-position: center, center;
-      background-repeat: no-repeat, no-repeat;
-      background-blend-mode: overlay;
-      background-color: rgba(0,0,0,0.6); /* voile sombre pour lisibilité */
+    /* Conteneur principal pour les deux photos */
+    .background-container {
+      display: flex;
+      height: 100vh;
+      width: 100%;
     }
 
-    /* Contenu texte centré et limité en largeur */
+    .left-bg, .right-bg {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .left-bg {
+      background-image: url('killian_et_yoyo1.jpg');
+    }
+
+    .right-bg {
+      background-image: url('killian_et_yoyo2.png');
+    }
+
+    /* Overlay semi-transparent pour lisibilité du texte */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    /* Texte centré */
     .content {
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.8;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
       text-align: center;
+      overflow-y: auto;
     }
 
     h1, h2 {
       color: #d81b60;
     }
 
-    /* Bouton musique */
+    p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.8;
+    }
+
     button {
       font-size: 18px;
       padding: 10px 20px;
       cursor: pointer;
-      margin-top: 40px;
+      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="background">
-    <div class="content">
+  <div class="background-container">
+    <div class="left-bg"></div>
+    <div class="right-bg"></div>
+    <div class="overlay"></div>
 
+    <div class="content">
       <h1>Mon Yoyo ❤️❤️❤️</h1>
 
       <p>
-        C’est compliqué d’innover chaque année depuis plus de 10 ans maintenant. 
-        Nous nous efforçons de faire preuve d’imagination et de nous dépasser pour rendre hommage à l’autre. 
-        Mais cette année, j’ai voulu faire quelque chose d’un peu différent… 
-        quelque chose qui m’a demandé un peu plus de temps que d’habitude, 
-        parce que oui, j’ai dû coder pour te rendre hommage !
+        C’est compliqué d’innover chaque année depuis plus de 10 ans maintenant… 
+        <!-- Ici ton texte complet -->
       </p>
-
-      <p>
-        28 ans mon vieux 😂 Comme le temps passe vite… 
-        Et plus les années s’écoulent, plus tu ressembles à l’homme que j’ai envie de devenir.
-        Avec le temps, tu es devenu celui vers qui je me tourne quand ça ne va pas, 
-        celui dont la parole compte vraiment, celui que j’écoute parce que je sais qu’elle est juste, sincère et droite.
-        Ta parole est d’or — et ça devient rare aujourd’hui.
-        Ta gentillesse, ta bienveillance, ton honnêteté et ta force tranquille sont des qualités que j’ai toujours admirées chez toi ❤️✨
-      </p>
-
-      <p>
-        On s’est rencontrés sur les bancs du lycée… enfin, techniquement sur les bancs, 
-        mais surtout à côté, parce que je séchais comme toujours 😂.
-        Ce qui devait être une simple rencontre dans un groupe d’amis est devenu la plus belle amitié de ma vie.
-        À ce moment-là, on ne pouvait pas savoir que plus de dix ans plus tard, 
-        on serait encore là, comme au premier jour, mais plus soudés que jamais ❤️
-      </p>
-
-      <!-- ... insère ici tout le reste de ton texte original ... -->
 
       <h2>Joyeux 28 ans mon Yoyo 🎉🥳❤️</h2>
-
-      <p>
-        Continue d’être cet homme droit, fort, bienveillant et lumineux.
-        Continue d’être cette personne rare que j’ai la chance d’avoir dans ma vie.
-        Merci d’être ma boussole quand je me sens perdu ❤️
-      </p>
 
       <p style="font-weight:bold; font-size:18px;">
         Je t’aime mon frère. Pour longtemps. Pour toujours. ❤️❤️❤️
       </p>
 
-      <!-- BOUTON MUSIQUE -->
       <button onclick="document.getElementById('music').style.display='block'; this.style.display='none';">
         ▶️ Écouter la musique
       </button>
@@ -101,7 +109,6 @@
       <iframe id="music" style="display:none;" width="0" height="0"
         src="https://www.youtube.com/embed/TiVIFMbwxOc?autoplay=1&loop=1&playlist=TiVIFMbwxOc"
         frameborder="0" allow="autoplay; encrypted-media"></iframe>
-
     </div>
   </div>
 
